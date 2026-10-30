@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>K E Barden | Finding Ever After</title>
+<meta name="description" content="K E Barden writes the Finding Ever After series from Brisbane: dark retellings of the old Grimm fairy tales, starting with The Gilded Mirror.">
+<meta property="og:title" content="A homepage for K E Barden, made by Sparsh Saini">
+<meta property="og:description" content="A homepage idea for K E Barden and the Finding Ever After series, made by Sparsh Saini. Not her official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/kebarden/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230e241e'/><ellipse cx='16' cy='16' rx='9' ry='12' fill='%231f5a66' stroke='%23d8a06a' stroke-width='3'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/plate.jpg">
+<style>
+/* From the Finding Ever After covers: deep forest green, the mirror's teal glass, the frame's
+   rose gold, the lilies' orange, the title's silver white, the briars' black. Cinzel Decorative
+   for the covers' engraved capitals, Cormorant Garamond to read in. */
+:root {
+  --forest: #0e241e; --forest-2: #08170f; --glass: #1f5a66; --rose: #d8a06a; --lily: #e8895a;
+  --silver: #eef1f2; --briar: #050807; --mist: #a9c2bf;
+  --display: "Cinzel Decorative", "Cinzel", Georgia, serif;
+  --text: "Cormorant Garamond", Georgia, serif;
+  --gut: clamp(1rem, 5vw, 4rem);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--forest-2); color: var(--silver); font-family: var(--text); font-size: 1.25rem; font-weight: 500; line-height: 1.55; overflow-x: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.08; margin: 0; }
+
+.strip { position: relative; z-index: 30; background: var(--briar); color: var(--rose); font-size: 1rem; text-align: center; padding: .45rem var(--gut); letter-spacing: .02em; }
+
+/* nav: a little gilt hand mirror */
+.glassbtn { position: fixed; z-index: 40; right: 14px; bottom: 14px; width: 56px; height: 74px; border-radius: 50%; border: 4px double var(--rose); background: radial-gradient(ellipse at 50% 35%, #2f7a85, var(--glass) 55%, #0b2a2f); color: var(--silver); font-family: var(--display); font-size: .7rem; cursor: pointer; box-shadow: 0 6px 14px rgba(0,0,0,.5); }
+.menu { position: fixed; z-index: 50; inset: 0; background: rgba(5, 8, 7, .84); display: none; }
+.menu.open { display: block; }
+.menu ol { position: absolute; right: 14px; bottom: 100px; list-style: none; margin: 0; padding: 1.1rem 1.4rem; background: var(--forest); border: 1px solid var(--rose); display: grid; gap: .35rem; text-align: right; }
+.menu a { font-family: var(--display); font-size: 1.15rem; color: var(--silver); text-decoration: none; }
+.menu a:hover { color: var(--rose); }
+
+/* ---------- the briars draw back ---------- */
+.hero { position: relative; height: 360vh; }
+.stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; background: var(--forest-2); }
+.frame { position: absolute; left: 50%; top: 14px; width: min(94vw, calc((100svh - 200px) * .6472)); transform: translateX(-50%); }
+.cover { position: relative; aspect-ratio: 1100 / 1700; overflow: hidden; box-shadow: 0 18px 40px rgba(0,0,0,.6); }
+.cover img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; will-change: transform; }
+.veil { position: absolute; inset: 0; background: var(--briar); will-change: opacity; }
+.cap { position: absolute; left: var(--gut); right: 86px; bottom: 18px; min-height: 150px; }
+.cap p { margin: 0; font-size: 1.22rem; line-height: 1.35; will-change: opacity; }
+.cap .c2 { position: absolute; left: 0; right: 0; top: 0; opacity: 0; pointer-events: none; }
+.cap .c2.live { pointer-events: auto; }
+.cap i { color: var(--rose); }
+.btn { display: inline-block; margin-top: .6rem; font-family: var(--display); font-weight: 700; font-size: .92rem; text-decoration: none; color: var(--forest-2); background: linear-gradient(#f0c79a, var(--rose) 60%, #a8703f); border-radius: 2px; padding: .5rem 1.1rem; box-shadow: inset 0 0 0 1px rgba(255,255,255,.35), 0 3px 0 #5e3a1d; }
+.btn:hover { background: var(--silver); }
+.btn.line { background: none; color: var(--silver); box-shadow: inset 0 0 0 1px var(--rose); }
+@media (min-width: 900px) {
+  .frame { left: auto; right: 9vw; top: 50%; width: calc((100svh - 70px) * .6472); transform: translateY(-50%); }
+  .cap { left: var(--gut); right: auto; bottom: auto; top: 50%; width: min(28rem, 34vw); transform: translateY(-50%); }
+  .cap p { font-size: 1.7rem; }
+}
+
+/* ---------- calm sections ---------- */
+section.book, section.series, section.about, section.fair { padding: clamp(3.5rem, 9vw, 6.5rem) var(--gut); }
+section h2 { font-size: clamp(2rem, 7.5vw, 3.6rem); color: var(--silver); }
+.lede { max-width: 40rem; margin: 1rem 0 0; font-size: 1.35rem; }
+
+.book { background: var(--forest); display: grid; gap: 2rem; }
+.book img { max-width: 21rem; box-shadow: 0 14px 30px rgba(0,0,0,.55); }
+.book .blurb p { max-width: 38rem; }
+.book .q { font-style: italic; color: var(--mist); border-left: 2px solid var(--rose); padding-left: 1rem; }
+.buy { display: flex; flex-wrap: wrap; gap: .6rem 1rem; margin-top: 1.4rem; }
+@media (min-width: 900px) { .book { grid-template-columns: minmax(0, 21rem) 1fr; gap: 4rem; align-items: start; } }
+
+.series { background: var(--forest-2); }
+.shelf { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 1.1rem; margin-top: 2.2rem; }
+@media (min-width: 900px) { .shelf { grid-template-columns: repeat(4, 1fr); gap: 2rem; } }
+.shelf figure { margin: 0; }
+.shelf img { box-shadow: 0 10px 22px rgba(0,0,0,.5); }
+.shelf figcaption { margin-top: .7rem; font-size: 1.05rem; line-height: 1.35; }
+.shelf figcaption b { display: block; font-family: var(--display); font-size: .95rem; color: var(--rose); }
+
+.about { background: var(--glass); background: linear-gradient(180deg, #17444d, var(--forest)); }
+.about p { max-width: 40rem; }
+.about .pull { font-family: var(--display); color: var(--rose); font-size: clamp(1.4rem, 5vw, 2.1rem); line-height: 1.2; max-width: 34rem; margin: 2rem 0; }
+
+.fair { background: var(--forest-2); border-top: 1px solid rgba(216,160,106,.3); }
+.fair .when { font-family: var(--display); color: var(--rose); font-size: clamp(1.6rem, 6.5vw, 2.8rem); line-height: 1.1; margin-top: 1.4rem; }
+.fair ul { list-style: none; padding: 0; margin: 1.6rem 0 0; max-width: 40rem; }
+.fair li { padding: .6rem 0; border-top: 1px solid rgba(216,160,106,.25); }
+.fair li b { font-family: var(--display); font-size: .95rem; color: var(--rose); display: block; }
+.fair .links { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .6rem 1rem; }
+footer { background: var(--briar); color: #8fa39f; text-align: center; font-size: 1rem; padding: 1rem var(--gut) 6.5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero { height: auto; }
+  .stage { position: relative; height: 100svh; }
+}
+</style>
+</head>
+<body>
+<div class="strip">A homepage idea made by Sparsh Saini for K E Barden. Not their official site.</div>
+<button class="glassbtn" aria-expanded="false" aria-controls="menu" aria-label="Open the menu">Menu</button>
+<div class="menu" id="menu">
+  <ol aria-label="Sections">
+    <li><a href="#top">The Gilded Mirror</a></li>
+    <li><a href="#book">Book one</a></li>
+    <li><a href="#series">Finding Ever After</a></li>
+    <li><a href="#about">Kim</a></li>
+    <li><a href="#fair">Sunshine Coast</a></li>
+  </ol>
+</div>
+
+<main>
+<section class="hero" id="top" aria-label="The Gilded Mirror">
+  <div class="stage">
+    <div class="frame">
+      <div class="cover">
+        <img class="plate" src="img/plate.jpg" alt="The cover of The Gilded Mirror by K E Barden: a rose gold mirror framed in black briars, a misty forest and three fairies in its glass" width="1100" height="1700">
+        <div class="veil"></div>
+        <img class="bl" src="img/briar-left.webp" alt="" width="1100" height="1700">
+        <img class="br" src="img/briar-right.webp" alt="" width="1100" height="1700">
+      </div>
+    </div>
+    <div class="cap">
+      <p class="c1">Eveline Rafter has only ever sought one thing: <i>to avenge her father.</i></p>
+      <p class="c2">She can find lost things. A watch. A purse. Even a person.<br><a class="btn" href="https://www.amazon.com.au/stores/K-E-Barden/author/B09T3L4ZQ9">Find the books</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <img src="img/gilded-mirror.jpg" alt="The Gilded Mirror, book one of the Finding Ever After series" width="800" height="1236" loading="lazy">
+  <div class="blurb">
+    <h2>The Gilded Mirror</h2>
+    <p class="lede">Hired by the Huntsman to find the lost princess Snow, Eve sets out with her closest companion Porchid, a Riverbell fairy, and a pair of twin golden knives that never miss.</p>
+    <p>The kingdom is ruled by an evil queen who consumes hearts for youth and power. There are dwarves with split personalities and a prince whose most endearing quality is his sneeze. And the princess is encased in a crystal coffin, hidden away in a magic realm.</p>
+    <p class="q">"Like I was reading a Shrek prequel." Tamara, IndieBook Reviewer</p>
+    <div class="buy">
+      <a class="btn" href="https://www.amazon.com.au/stores/K-E-Barden/author/B09T3L4ZQ9">Amazon</a>
+      <a class="btn line" href="https://kemptonbooks.com/collections/author-collaboration">Ever After book boxes</a>
+    </div>
+  </div>
+</section>
+
+<section class="series" id="series">
+  <h2>Finding Ever After</h2>
+  <p class="lede">A dark retelling of the original Grimm tales, five books in, every one framed in the same briars.</p>
+  <div class="shelf">
+    <figure><img src="img/book2.jpg" alt="These Grimm Fates cover" width="400" height="600" loading="lazy"><figcaption><b>These Grimm Fates</b>A tower with a locked princess. A mirror and a magic stone.</figcaption></figure>
+    <figure><img src="img/book3.jpg" alt="A Glass Darkly cover" width="397" height="600" loading="lazy"><figcaption><b>A Glass Darkly</b>Sometimes a monster can be the most beautiful thing you've ever seen.</figcaption></figure>
+    <figure><img src="img/book4.jpg" alt="These Grave Hearts cover" width="395" height="600" loading="lazy"><figcaption><b>These Grave Hearts</b>Black glass and boned frames, a depth so dark it withers flames.</figcaption></figure>
+    <figure><img src="img/book5.jpg" alt="A Gifted Poison cover" width="400" height="600" loading="lazy"><figcaption><b>A Gifted Poison</b>Once a beauty, but now a beast. Launched in Fortitude Valley, 24 October.</figcaption></figure>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>Kim</h2>
+  <p class="lede">K E Barden was born in Canberra and writes in Brisbane, around a full-time job.</p>
+  <p class="pull">The Gilded Mirror was written entirely on a mobile phone, and the dent in her pinkie finger proves it.</p>
+  <p>It was shortlisted for the Queensland Writers Centre's ADAPTABLE program, where she pitched it to producers for the screen. When she isn't writing she's spoiling a high maintenance cat or building fairy castles.</p>
+</section>
+
+<section class="fair" id="fair">
+  <h2>Come and find her</h2>
+  <div class="when">Sunshine Coast Fiction Festival<br>30 October to 1 November, Bokarina</div>
+  <ul>
+    <li><b>All five books</b>Paperback and hardback, and the whole series as a bundle.</li>
+    <li><b>The signature perfume</b>A 10ml bottle made for the series.</li>
+    <li><b>Character tarot cards and bookmarks</b>One for each of the Finding Ever After cast.</li>
+    <li><b>Next: Unbound Pages 2027</b>Pre-orders are already open.</li>
+  </ul>
+  <div class="links">
+    <a class="btn" href="https://beventi.co/orderform/3v8fhvp452">Pre-order for Unbound Pages</a>
+    <a class="btn line" href="https://instagram.com/kebardenauthor">Instagram</a>
+    <a class="btn line" href="https://dashboard.mailerlite.com/forms/1241551/145631145068856387/share">Newsletter</a>
+  </div>
+</section>
+</main>
+<footer>A mockup made by Sparsh Saini for K E Barden. Not affiliated, not live.</footer>
+
+<script>
+(() => {
+  const btn = document.querySelector('.glassbtn'), menu = document.getElementById('menu');
+  const setOpen = o => { menu.classList.toggle('open', o); btn.setAttribute('aria-expanded', o); if (o) menu.querySelector('a').focus(); };
+  btn.addEventListener('click', () => setOpen(!menu.classList.contains('open')));
+  menu.addEventListener('click', e => { if (e.target === menu || e.target.closest('a')) setOpen(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+
+  // the briars start knotted shut over the mirror; your scroll draws them back to the edges
+  // of the cover, the dark lifts off the glass, and the title is there waiting
+  const hero = document.querySelector('.hero');
+  const bl = hero.querySelector('.bl'), br = hero.querySelector('.br'), plate = hero.querySelector('.plate'), veil = hero.querySelector('.veil');
+  const c1 = hero.querySelector('.c1'), c2 = hero.querySelector('.c2');
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  let ticking = false;
+  function frame() {
+    ticking = false;
+    let p;
+    if (still.matches) p = 1;
+    else { const r = hero.getBoundingClientRect(); p = clamp(-r.top / (hero.offsetHeight - innerHeight)); }
+    const t = ease(clamp((p - .04) / .8)), u = 1 - t;
+    bl.style.transform = `translate(${(u * 46).toFixed(3)}%, ${(u * -4).toFixed(3)}%) rotate(${(u * -9).toFixed(3)}deg) scale(${(1 + u * .5).toFixed(4)})`;
+    br.style.transform = `translate(${(u * -46).toFixed(3)}%, ${(u * 5).toFixed(3)}%) rotate(${(u * 10).toFixed(3)}deg) scale(${(1 + u * .5).toFixed(4)})`;
+    plate.style.transform = `scale(${(1 + u * .08).toFixed(4)})`;
+    veil.style.opacity = (u * .72).toFixed(3);
+    const k = clamp((p - .8) / .1);
+    c1.style.opacity = (1 - k).toFixed(3);
+    c2.style.opacity = k.toFixed(3);
+    c2.classList.toggle('live', k > .5);
+  }
+  const go = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+  addEventListener('scroll', go, { passive: true });
+  addEventListener('resize', go);
+  still.addEventListener('change', go);
+  frame();
+})();
+</script>
+</body>
+</html>
